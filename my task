@@ -1,0 +1,38 @@
+######TASK ONE ###########
+
+function SecondLargestNum($arr) {
+    $maxNum = $secondMax =0;
+
+    foreach ($arr as $num) {
+        if ($num > $maxNum) {
+            $secondMax = $maxNum;
+            $maxNum = $num;
+        } elseif ($num > $secondMax && $num < $maxNum) {
+            $secondMax = $num;
+        }
+    }
+
+    return $secondMax;
+}
+
+$input = [20,23,55,90,79];
+echo SecondLargestNum($input); 
+echo "<br>";
+
+
+
+
+
+
+########## TASK TWO #########
+
+function isPalindrome($string) {
+
+    $string = strtolower(str_replace(' ', '', $string));
+    return $string === strrev($string);
+}
+
+$input = "madam";
+echo isPalindrome($input) ? "true" : "false";
+
+echo "<br>";
